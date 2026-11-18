@@ -1,0 +1,410 @@
+/* ==========================================================================
+   BatchBite Artisanal Food Business Theme & UI Styling
+   ========================================================================== */
+
+:root {
+  --bb-primary: #d9534f;
+  --bb-primary-dark: #b83b37;
+  --bb-primary-light: #fbeae9;
+  --bb-accent: #e67e22;
+  --bb-accent-hover: #d35400;
+  --bb-dark: #1e293b;
+  --bb-dark-soft: #334155;
+  --bb-light: #f8fafc;
+  --bb-cream: #fffdf9;
+  --bb-border: #e2e8f0;
+  --bb-muted: #64748b;
+  --bb-success: #10b981;
+  --bb-warning: #f59e0b;
+  --bb-info: #0284c7;
+  --bb-radius-sm: 8px;
+  --bb-radius-md: 12px;
+  --bb-radius-lg: 18px;
+  --bb-radius-xl: 24px;
+  --bb-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --bb-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.06);
+  --bb-shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.09);
+  --bb-font-heading: 'Outfit', sans-serif;
+  --bb-font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--bb-font-body);
+  background-color: var(--bb-light);
+  color: var(--bb-dark);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--bb-font-heading);
+  font-weight: 700;
+  color: var(--bb-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Navbar */
+.bb-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bb-border);
+  transition: all 0.3s ease;
+}
+
+.bb-brand {
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: var(--bb-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bb-brand-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.bb-nav-link {
+  font-weight: 500;
+  color: var(--bb-dark-soft) !important;
+  padding: 8px 14px !important;
+  border-radius: var(--bb-radius-sm);
+  transition: all 0.2s;
+}
+
+.bb-nav-link:hover, .bb-nav-link.active {
+  color: var(--bb-primary) !important;
+  background-color: var(--bb-primary-light);
+}
+
+/* Buttons */
+.btn-bb-primary {
+  background-color: var(--bb-primary);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: var(--bb-radius-md);
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-bb-primary:hover, .btn-bb-primary:focus {
+  background-color: var(--bb-primary-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(217, 83, 79, 0.35);
+}
+
+.btn-bb-outline {
+  border: 2px solid var(--bb-primary);
+  color: var(--bb-primary);
+  background: transparent;
+  font-weight: 600;
+  border-radius: var(--bb-radius-md);
+  padding: 8px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-bb-outline:hover {
+  background-color: var(--bb-primary);
+  color: #fff;
+}
+
+.btn-bb-accent {
+  background-color: var(--bb-accent);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: var(--bb-radius-md);
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-bb-accent:hover {
+  background-color: var(--bb-accent-hover);
+  color: #fff;
+}
+
+/* Hero Section */
+.bb-hero {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fef2f2 100%);
+  padding: 70px 0 60px;
+  border-bottom: 1px solid #fed7aa;
+}
+
+/* Food Cards */
+.bb-card {
+  background: #ffffff;
+  border: 1px solid var(--bb-border);
+  border-radius: var(--bb-radius-lg);
+  box-shadow: var(--bb-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+}
+
+.bb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bb-shadow-lg);
+  border-color: #cbd5e1;
+}
+
+.bb-card-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.bb-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bb-card:hover .bb-card-img {
+  transform: scale(1.05);
+}
+
+.bb-badge-floating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.bb-badge-category {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* Owner Sidebar & Dashboard Layout */
+.bb-dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.bb-sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid var(--bb-border);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--bb-dark-soft);
+  font-weight: 500;
+  border-radius: var(--bb-radius-md);
+  margin-bottom: 4px;
+  transition: all 0.2s;
+}
+
+.bb-sidebar-link:hover {
+  background-color: #f1f5f9;
+  color: var(--bb-primary);
+}
+
+.bb-sidebar-link.active {
+  background-color: var(--bb-primary-light);
+  color: var(--bb-primary);
+  font-weight: 600;
+}
+
+.bb-sidebar-icon {
+  font-size: 1.2rem;
+  width: 24px;
+}
+
+.bb-dashboard-content {
+  flex: 1;
+  background-color: var(--bb-light);
+  padding: 30px;
+  overflow-y: auto;
+}
+
+@media (max-width: 991px) {
+  .bb-dashboard-layout {
+    flex-direction: column;
+  }
+  .bb-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--bb-border);
+  }
+}
+
+/* Stats Widget */
+.bb-stat-card {
+  background: #fff;
+  border-radius: var(--bb-radius-lg);
+  padding: 22px;
+  border: 1px solid var(--bb-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--bb-shadow-sm);
+}
+
+.bb-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--bb-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Order Status Tracker Steps */
+.bb-tracker {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 30px 0;
+}
+
+.bb-tracker::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.bb-tracker-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+
+.bb-tracker-circle {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--bb-muted);
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.bb-tracker-step.completed .bb-tracker-circle {
+  background-color: var(--bb-success);
+  border-color: var(--bb-success);
+  color: #fff;
+}
+
+.bb-tracker-step.active .bb-tracker-circle {
+  background-color: var(--bb-primary);
+  border-color: var(--bb-primary);
+  color: #fff;
+  box-shadow: 0 0 0 5px rgba(217, 83, 79, 0.2);
+}
+
+.bb-tracker-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bb-muted);
+}
+
+.bb-tracker-step.active .bb-tracker-title {
+  color: var(--bb-primary);
+}
+
+.bb-tracker-step.completed .bb-tracker-title {
+  color: var(--bb-dark);
+}
+
+/* Countdown & deadline pills */
+.bb-deadline-badge {
+  background-color: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Footer */
+.bb-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 50px 0 30px;
+  margin-top: 60px;
+}
+
+.bb-footer h5 {
+  color: #ffffff;
+}
+
+.bb-footer a {
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.bb-footer a:hover {
+  color: #ffffff;
+}
+
+/* Form controls */
+.form-control, .form-select {
+  border-radius: var(--bb-radius-md);
+  padding: 10px 14px;
+  border: 1px solid var(--bb-border);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bb-primary);
+  box-shadow: 0 0 0 0.25rem rgba(217, 83, 79, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

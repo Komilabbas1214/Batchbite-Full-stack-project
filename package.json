@@ -1,0 +1,16 @@
+{
+  "name": "batchbite",
+  "version": "1.0.0",
+  "description": "BatchBite - Artisanal Pre-Order and Batch Management Platform for Home-Based Food Businesses",
+  "scripts": {
+    "server": "node backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build:client": "npm run build --prefix frontend",
+    "seed": "node backend/utils/seedData.js",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
