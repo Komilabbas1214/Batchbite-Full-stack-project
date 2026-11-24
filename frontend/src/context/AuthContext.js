@@ -53,6 +53,8 @@ export const AuthProvider = ({ children }) => {
       const message =
         err.response && err.response.data && err.response.data.message
           ? err.response.data.message
+          : !err.response
+          ? 'Cannot connect to the backend server. Please make sure the backend is running on port 5000.'
           : 'Failed to sign in. Please check your credentials.';
       return { success: false, message };
     }
@@ -74,6 +76,8 @@ export const AuthProvider = ({ children }) => {
       const message =
         err.response && err.response.data && err.response.data.message
           ? err.response.data.message
+          : !err.response
+          ? 'Cannot connect to the backend server. Please make sure the backend is running on port 5000.'
           : 'Registration failed. Please try again.';
       return { success: false, message };
     }

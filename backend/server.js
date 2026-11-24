@@ -1,8 +1,11 @@
+
+const dns = require('dns');
+dns.setServers(['8.8.8.8']);
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
-const { connectDB } = require('./config/db');
+const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const User = require('./models/User');
 const seedData = require('./utils/seedData');
@@ -53,12 +56,7 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    // Check if database needs initial seeding
-    const userCount = await User.countDocuments();
-    if (userCount === 0) {
-      console.log('[Server] Database is empty. Auto-seeding initial demo data...');
-      await seedData();
-    }
+  
 
     const server = app.listen(PORT, () => {
       console.log(`====================================================`);
